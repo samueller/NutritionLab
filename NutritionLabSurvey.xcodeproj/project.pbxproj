@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D29F8CAA25DB7F2000CEC2AA /* NutritionLabSurveyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CA925DB7F2000CEC2AA /* NutritionLabSurveyApp.swift */; };
+		D29F8CAC25DB7F2000CEC2AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CAB25DB7F2000CEC2AA /* ContentView.swift */; };
+		D29F8CAE25DB7F2300CEC2AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29F8CAD25DB7F2300CEC2AA /* Assets.xcassets */; };
+		D29F8CB125DB7F2300CEC2AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29F8CB025DB7F2300CEC2AA /* Preview Assets.xcassets */; };
+		D29F8CB325DB7F2300CEC2AA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CB225DB7F2300CEC2AA /* Persistence.swift */; };
+		D29F8CB625DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CB425DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodeld */; };
+		D29F8CC125DB7F2300CEC2AA /* NutritionLabSurveyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CC025DB7F2300CEC2AA /* NutritionLabSurveyTests.swift */; };
+		D29F8CCC25DB7F2300CEC2AA /* NutritionLabSurveyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CCB25DB7F2300CEC2AA /* NutritionLabSurveyUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D29F8CBD25DB7F2300CEC2AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D29F8C9E25DB7F2000CEC2AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D29F8CA525DB7F2000CEC2AA;
+			remoteInfo = NutritionLabSurvey;
+		};
+		D29F8CC825DB7F2300CEC2AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D29F8C9E25DB7F2000CEC2AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D29F8CA525DB7F2000CEC2AA;
+			remoteInfo = NutritionLabSurvey;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D29F8CA625DB7F2000CEC2AA /* NutritionLabSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutritionLabSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29F8CA925DB7F2000CEC2AA /* NutritionLabSurveyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionLabSurveyApp.swift; sourceTree = "<group>"; };
+		D29F8CAB25DB7F2000CEC2AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D29F8CAD25DB7F2300CEC2AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D29F8CB025DB7F2300CEC2AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D29F8CB225DB7F2300CEC2AA /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		D29F8CB525DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NutritionLabSurvey.xcdatamodel; sourceTree = "<group>"; };
+		D29F8CB725DB7F2300CEC2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D29F8CBC25DB7F2300CEC2AA /* NutritionLabSurveyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutritionLabSurveyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29F8CC025DB7F2300CEC2AA /* NutritionLabSurveyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionLabSurveyTests.swift; sourceTree = "<group>"; };
+		D29F8CC225DB7F2300CEC2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D29F8CC725DB7F2300CEC2AA /* NutritionLabSurveyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutritionLabSurveyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29F8CCB25DB7F2300CEC2AA /* NutritionLabSurveyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionLabSurveyUITests.swift; sourceTree = "<group>"; };
+		D29F8CCD25DB7F2300CEC2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D29F8CA325DB7F2000CEC2AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D29F8CB925DB7F2300CEC2AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D29F8CC425DB7F2300CEC2AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D29F8C9D25DB7F2000CEC2AA = {
+			isa = PBXGroup;
+			children = (
+				D29F8CA825DB7F2000CEC2AA /* NutritionLabSurvey */,
+				D29F8CBF25DB7F2300CEC2AA /* NutritionLabSurveyTests */,
+				D29F8CCA25DB7F2300CEC2AA /* NutritionLabSurveyUITests */,
+				D29F8CA725DB7F2000CEC2AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D29F8CA725DB7F2000CEC2AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D29F8CA625DB7F2000CEC2AA /* NutritionLabSurvey.app */,
+				D29F8CBC25DB7F2300CEC2AA /* NutritionLabSurveyTests.xctest */,
+				D29F8CC725DB7F2300CEC2AA /* NutritionLabSurveyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D29F8CA825DB7F2000CEC2AA /* NutritionLabSurvey */ = {
+			isa = PBXGroup;
+			children = (
+				D29F8CA925DB7F2000CEC2AA /* NutritionLabSurveyApp.swift */,
+				D29F8CAB25DB7F2000CEC2AA /* ContentView.swift */,
+				D29F8CAD25DB7F2300CEC2AA /* Assets.xcassets */,
+				D29F8CB225DB7F2300CEC2AA /* Persistence.swift */,
+				D29F8CB725DB7F2300CEC2AA /* Info.plist */,
+				D29F8CB425DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodeld */,
+				D29F8CAF25DB7F2300CEC2AA /* Preview Content */,
+			);
+			path = NutritionLabSurvey;
+			sourceTree = "<group>";
+		};
+		D29F8CAF25DB7F2300CEC2AA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D29F8CB025DB7F2300CEC2AA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D29F8CBF25DB7F2300CEC2AA /* NutritionLabSurveyTests */ = {
+			isa = PBXGroup;
+			children = (
+				D29F8CC025DB7F2300CEC2AA /* NutritionLabSurveyTests.swift */,
+				D29F8CC225DB7F2300CEC2AA /* Info.plist */,
+			);
+			path = NutritionLabSurveyTests;
+			sourceTree = "<group>";
+		};
+		D29F8CCA25DB7F2300CEC2AA /* NutritionLabSurveyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D29F8CCB25DB7F2300CEC2AA /* NutritionLabSurveyUITests.swift */,
+				D29F8CCD25DB7F2300CEC2AA /* Info.plist */,
+			);
+			path = NutritionLabSurveyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D29F8CA525DB7F2000CEC2AA /* NutritionLabSurvey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D29F8CD025DB7F2300CEC2AA /* Build configuration list for PBXNativeTarget "NutritionLabSurvey" */;
+			buildPhases = (
+				D29F8CA225DB7F2000CEC2AA /* Sources */,
+				D29F8CA325DB7F2000CEC2AA /* Frameworks */,
+				D29F8CA425DB7F2000CEC2AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NutritionLabSurvey;
+			productName = NutritionLabSurvey;
+			productReference = D29F8CA625DB7F2000CEC2AA /* NutritionLabSurvey.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D29F8CBB25DB7F2300CEC2AA /* NutritionLabSurveyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D29F8CD325DB7F2300CEC2AA /* Build configuration list for PBXNativeTarget "NutritionLabSurveyTests" */;
+			buildPhases = (
+				D29F8CB825DB7F2300CEC2AA /* Sources */,
+				D29F8CB925DB7F2300CEC2AA /* Frameworks */,
+				D29F8CBA25DB7F2300CEC2AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D29F8CBE25DB7F2300CEC2AA /* PBXTargetDependency */,
+			);
+			name = NutritionLabSurveyTests;
+			productName = NutritionLabSurveyTests;
+			productReference = D29F8CBC25DB7F2300CEC2AA /* NutritionLabSurveyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D29F8CC625DB7F2300CEC2AA /* NutritionLabSurveyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D29F8CD625DB7F2300CEC2AA /* Build configuration list for PBXNativeTarget "NutritionLabSurveyUITests" */;
+			buildPhases = (
+				D29F8CC325DB7F2300CEC2AA /* Sources */,
+				D29F8CC425DB7F2300CEC2AA /* Frameworks */,
+				D29F8CC525DB7F2300CEC2AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D29F8CC925DB7F2300CEC2AA /* PBXTargetDependency */,
+			);
+			name = NutritionLabSurveyUITests;
+			productName = NutritionLabSurveyUITests;
+			productReference = D29F8CC725DB7F2300CEC2AA /* NutritionLabSurveyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D29F8C9E25DB7F2000CEC2AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					D29F8CA525DB7F2000CEC2AA = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					D29F8CBB25DB7F2300CEC2AA = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = D29F8CA525DB7F2000CEC2AA;
+					};
+					D29F8CC625DB7F2300CEC2AA = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = D29F8CA525DB7F2000CEC2AA;
+					};
+				};
+			};
+			buildConfigurationList = D29F8CA125DB7F2000CEC2AA /* Build configuration list for PBXProject "NutritionLabSurvey" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D29F8C9D25DB7F2000CEC2AA;
+			productRefGroup = D29F8CA725DB7F2000CEC2AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D29F8CA525DB7F2000CEC2AA /* NutritionLabSurvey */,
+				D29F8CBB25DB7F2300CEC2AA /* NutritionLabSurveyTests */,
+				D29F8CC625DB7F2300CEC2AA /* NutritionLabSurveyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D29F8CA425DB7F2000CEC2AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29F8CB125DB7F2300CEC2AA /* Preview Assets.xcassets in Resources */,
+				D29F8CAE25DB7F2300CEC2AA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D29F8CBA25DB7F2300CEC2AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D29F8CC525DB7F2300CEC2AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D29F8CA225DB7F2000CEC2AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29F8CB625DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodeld in Sources */,
+				D29F8CB325DB7F2300CEC2AA /* Persistence.swift in Sources */,
+				D29F8CAC25DB7F2000CEC2AA /* ContentView.swift in Sources */,
+				D29F8CAA25DB7F2000CEC2AA /* NutritionLabSurveyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D29F8CB825DB7F2300CEC2AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29F8CC125DB7F2300CEC2AA /* NutritionLabSurveyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D29F8CC325DB7F2300CEC2AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29F8CCC25DB7F2300CEC2AA /* NutritionLabSurveyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D29F8CBE25DB7F2300CEC2AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D29F8CA525DB7F2000CEC2AA /* NutritionLabSurvey */;
+			targetProxy = D29F8CBD25DB7F2300CEC2AA /* PBXContainerItemProxy */;
+		};
+		D29F8CC925DB7F2300CEC2AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D29F8CA525DB7F2000CEC2AA /* NutritionLabSurvey */;
+			targetProxy = D29F8CC825DB7F2300CEC2AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D29F8CCE25DB7F2300CEC2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D29F8CCF25DB7F2300CEC2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D29F8CD125DB7F2300CEC2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NutritionLabSurvey/Preview Content\"";
+				DEVELOPMENT_TEAM = AANGTQW8VR;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = NutritionLabSurvey/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.nutritionlab.NutritionLabSurvey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D29F8CD225DB7F2300CEC2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NutritionLabSurvey/Preview Content\"";
+				DEVELOPMENT_TEAM = AANGTQW8VR;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = NutritionLabSurvey/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.nutritionlab.NutritionLabSurvey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D29F8CD425DB7F2300CEC2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AANGTQW8VR;
+				INFOPLIST_FILE = NutritionLabSurveyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.nutritionlab.NutritionLabSurveyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NutritionLabSurvey.app/NutritionLabSurvey";
+			};
+			name = Debug;
+		};
+		D29F8CD525DB7F2300CEC2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AANGTQW8VR;
+				INFOPLIST_FILE = NutritionLabSurveyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.nutritionlab.NutritionLabSurveyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NutritionLabSurvey.app/NutritionLabSurvey";
+			};
+			name = Release;
+		};
+		D29F8CD725DB7F2300CEC2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AANGTQW8VR;
+				INFOPLIST_FILE = NutritionLabSurveyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.nutritionlab.NutritionLabSurveyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NutritionLabSurvey;
+			};
+			name = Debug;
+		};
+		D29F8CD825DB7F2300CEC2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AANGTQW8VR;
+				INFOPLIST_FILE = NutritionLabSurveyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.nutritionlab.NutritionLabSurveyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NutritionLabSurvey;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D29F8CA125DB7F2000CEC2AA /* Build configuration list for PBXProject "NutritionLabSurvey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29F8CCE25DB7F2300CEC2AA /* Debug */,
+				D29F8CCF25DB7F2300CEC2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D29F8CD025DB7F2300CEC2AA /* Build configuration list for PBXNativeTarget "NutritionLabSurvey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29F8CD125DB7F2300CEC2AA /* Debug */,
+				D29F8CD225DB7F2300CEC2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D29F8CD325DB7F2300CEC2AA /* Build configuration list for PBXNativeTarget "NutritionLabSurveyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29F8CD425DB7F2300CEC2AA /* Debug */,
+				D29F8CD525DB7F2300CEC2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D29F8CD625DB7F2300CEC2AA /* Build configuration list for PBXNativeTarget "NutritionLabSurveyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29F8CD725DB7F2300CEC2AA /* Debug */,
+				D29F8CD825DB7F2300CEC2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D29F8CB425DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D29F8CB525DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodel */,
+			);
+			currentVersion = D29F8CB525DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodel */;
+			path = NutritionLabSurvey.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D29F8C9E25DB7F2000CEC2AA /* Project object */;
+}
