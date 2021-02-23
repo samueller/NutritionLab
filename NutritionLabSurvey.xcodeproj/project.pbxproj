@@ -3,12 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11D1E9E6D8BB036B407CFE32 /* Pods_NutritionLabSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE86D2FC69197F0AF8B4CC14 /* Pods_NutritionLabSurvey.framework */; };
+		D2308D7625DB94240017394E /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2308D7525DB94240017394E /* Survey.swift */; };
+		D2308D8E25DCD5FA0017394E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2308D8D25DCD5FA0017394E /* UIViewController.swift */; };
+		D2308D9D25DCD9140017394E /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2308D9C25DCD9140017394E /* Lab.swift */; };
+		D2308DC725DCE3440017394E /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2308DC625DCE3440017394E /* Action.swift */; };
+		D2308DCD25DCE5850017394E /* FilePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2308DCC25DCE5850017394E /* FilePicker.swift */; };
 		D29F8CAA25DB7F2000CEC2AA /* NutritionLabSurveyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CA925DB7F2000CEC2AA /* NutritionLabSurveyApp.swift */; };
-		D29F8CAC25DB7F2000CEC2AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CAB25DB7F2000CEC2AA /* ContentView.swift */; };
+		D29F8CAC25DB7F2000CEC2AA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CAB25DB7F2000CEC2AA /* HomeView.swift */; };
 		D29F8CAE25DB7F2300CEC2AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29F8CAD25DB7F2300CEC2AA /* Assets.xcassets */; };
 		D29F8CB125DB7F2300CEC2AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29F8CB025DB7F2300CEC2AA /* Preview Assets.xcassets */; };
 		D29F8CB325DB7F2300CEC2AA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CB225DB7F2300CEC2AA /* Persistence.swift */; };
@@ -34,10 +40,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D29F8CEF25DB805F00CEC2AA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0809869B10DC6739368D935E /* Pods-NutritionLabSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionLabSurvey.release.xcconfig"; path = "Target Support Files/Pods-NutritionLabSurvey/Pods-NutritionLabSurvey.release.xcconfig"; sourceTree = "<group>"; };
+		607D9327CBBCA580072564F3 /* Pods-NutritionLabSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionLabSurvey.debug.xcconfig"; path = "Target Support Files/Pods-NutritionLabSurvey/Pods-NutritionLabSurvey.debug.xcconfig"; sourceTree = "<group>"; };
+		AE86D2FC69197F0AF8B4CC14 /* Pods_NutritionLabSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NutritionLabSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2308D7525DB94240017394E /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
+		D2308D8D25DCD5FA0017394E /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		D2308D9C25DCD9140017394E /* Lab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
+		D2308DC625DCE3440017394E /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		D2308DCC25DCE5850017394E /* FilePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePicker.swift; sourceTree = "<group>"; };
 		D29F8CA625DB7F2000CEC2AA /* NutritionLabSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutritionLabSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29F8CA925DB7F2000CEC2AA /* NutritionLabSurveyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionLabSurveyApp.swift; sourceTree = "<group>"; };
-		D29F8CAB25DB7F2000CEC2AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D29F8CAB25DB7F2000CEC2AA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D29F8CAD25DB7F2300CEC2AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D29F8CB025DB7F2300CEC2AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D29F8CB225DB7F2300CEC2AA /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -56,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11D1E9E6D8BB036B407CFE32 /* Pods_NutritionLabSurvey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +104,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C347F251B8DDF1AB0F28339 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				607D9327CBBCA580072564F3 /* Pods-NutritionLabSurvey.debug.xcconfig */,
+				0809869B10DC6739368D935E /* Pods-NutritionLabSurvey.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D2308D8B25DCD5D60017394E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D29F8CAB25DB7F2000CEC2AA /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D2308D8C25DCD5EF0017394E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D2308D8D25DCD5FA0017394E /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D2308D9B25DCD9070017394E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2308D9C25DCD9140017394E /* Lab.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D2308DC525DCE33A0017394E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D2308DC625DCE3440017394E /* Action.swift */,
+				D2308D7525DB94240017394E /* Survey.swift */,
+				D2308DCC25DCE5850017394E /* FilePicker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		D29F8C9D25DB7F2000CEC2AA = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +154,8 @@
 				D29F8CBF25DB7F2300CEC2AA /* NutritionLabSurveyTests */,
 				D29F8CCA25DB7F2300CEC2AA /* NutritionLabSurveyUITests */,
 				D29F8CA725DB7F2000CEC2AA /* Products */,
+				D29F8CEC25DB805F00CEC2AA /* Frameworks */,
+				7C347F251B8DDF1AB0F28339 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,9 +173,12 @@
 			isa = PBXGroup;
 			children = (
 				D29F8CA925DB7F2000CEC2AA /* NutritionLabSurveyApp.swift */,
-				D29F8CAB25DB7F2000CEC2AA /* ContentView.swift */,
-				D29F8CAD25DB7F2300CEC2AA /* Assets.xcassets */,
 				D29F8CB225DB7F2300CEC2AA /* Persistence.swift */,
+				D2308D8C25DCD5EF0017394E /* Extensions */,
+				D2308D9B25DCD9070017394E /* Models */,
+				D2308DC525DCE33A0017394E /* Components */,
+				D2308D8B25DCD5D60017394E /* Views */,
+				D29F8CAD25DB7F2300CEC2AA /* Assets.xcassets */,
 				D29F8CB725DB7F2300CEC2AA /* Info.plist */,
 				D29F8CB425DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodeld */,
 				D29F8CAF25DB7F2300CEC2AA /* Preview Content */,
@@ -136,6 +212,14 @@
 			path = NutritionLabSurveyUITests;
 			sourceTree = "<group>";
 		};
+		D29F8CEC25DB805F00CEC2AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE86D2FC69197F0AF8B4CC14 /* Pods_NutritionLabSurvey.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D29F8CD025DB7F2300CEC2AA /* Build configuration list for PBXNativeTarget "NutritionLabSurvey" */;
 			buildPhases = (
+				BF35A6F062DF6568DBCD9E39 /* [CP] Check Pods Manifest.lock */,
 				D29F8CA225DB7F2000CEC2AA /* Sources */,
 				D29F8CA325DB7F2000CEC2AA /* Frameworks */,
 				D29F8CA425DB7F2000CEC2AA /* Resources */,
+				D29F8CEF25DB805F00CEC2AA /* Embed Frameworks */,
+				08311E5E13CE0FA54AA7EB0A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,7 +302,7 @@
 				};
 			};
 			buildConfigurationList = D29F8CA125DB7F2000CEC2AA /* Build configuration list for PBXProject "NutritionLabSurvey" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -260,14 +347,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08311E5E13CE0FA54AA7EB0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NutritionLabSurvey/Pods-NutritionLabSurvey-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NutritionLabSurvey/Pods-NutritionLabSurvey-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NutritionLabSurvey/Pods-NutritionLabSurvey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF35A6F062DF6568DBCD9E39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NutritionLabSurvey-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D29F8CA225DB7F2000CEC2AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2308DCD25DCE5850017394E /* FilePicker.swift in Sources */,
 				D29F8CB625DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodeld in Sources */,
 				D29F8CB325DB7F2300CEC2AA /* Persistence.swift in Sources */,
-				D29F8CAC25DB7F2000CEC2AA /* ContentView.swift in Sources */,
+				D2308D8E25DCD5FA0017394E /* UIViewController.swift in Sources */,
+				D2308D9D25DCD9140017394E /* Lab.swift in Sources */,
+				D29F8CAC25DB7F2000CEC2AA /* HomeView.swift in Sources */,
+				D2308DC725DCE3440017394E /* Action.swift in Sources */,
+				D2308D7625DB94240017394E /* Survey.swift in Sources */,
 				D29F8CAA25DB7F2000CEC2AA /* NutritionLabSurveyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +556,7 @@
 		};
 		D29F8CD125DB7F2300CEC2AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 607D9327CBBCA580072564F3 /* Pods-NutritionLabSurvey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,6 +579,7 @@
 		};
 		D29F8CD225DB7F2300CEC2AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0809869B10DC6739368D935E /* Pods-NutritionLabSurvey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
