@@ -1,7 +1,7 @@
 import UIKit
 
 extension UIViewController {
-    static var current: UIViewController? {
-        UIApplication.shared.windows.last?.rootViewController
-    }
+	static var current: UIViewController? {
+		UIApplication.shared.windows.last?.rootViewController
+	}
 }
