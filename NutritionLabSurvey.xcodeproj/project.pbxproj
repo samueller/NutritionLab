@@ -21,6 +21,8 @@
 		D29F8CB625DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CB425DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodeld */; };
 		D29F8CC125DB7F2300CEC2AA /* NutritionLabSurveyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CC025DB7F2300CEC2AA /* NutritionLabSurveyTests.swift */; };
 		D29F8CCC25DB7F2300CEC2AA /* NutritionLabSurveyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CCB25DB7F2300CEC2AA /* NutritionLabSurveyUITests.swift */; };
+		D2E9D8D425ECAB3400EE4027 /* LabResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9D8D325ECAB3400EE4027 /* LabResults.swift */; };
+		D2E9D8D925ECDF6900EE4027 /* CareKit in Frameworks */ = {isa = PBXBuildFile; productRef = D2E9D8D825ECDF6900EE4027 /* CareKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,7 @@
 		D29F8CC725DB7F2300CEC2AA /* NutritionLabSurveyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutritionLabSurveyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29F8CCB25DB7F2300CEC2AA /* NutritionLabSurveyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionLabSurveyUITests.swift; sourceTree = "<group>"; };
 		D29F8CCD25DB7F2300CEC2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2E9D8D325ECAB3400EE4027 /* LabResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2E9D8D925ECDF6900EE4027 /* CareKit in Frameworks */,
 				11D1E9E6D8BB036B407CFE32 /* Pods_NutritionLabSurvey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				D2308D9C25DCD9140017394E /* Lab.swift */,
+				D2E9D8D325ECAB3400EE4027 /* LabResults.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,6 +244,9 @@
 			dependencies = (
 			);
 			name = NutritionLabSurvey;
+			packageProductDependencies = (
+				D2E9D8D825ECDF6900EE4027 /* CareKit */,
+			);
 			productName = NutritionLabSurvey;
 			productReference = D29F8CA625DB7F2000CEC2AA /* NutritionLabSurvey.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +318,9 @@
 				Base,
 			);
 			mainGroup = D29F8C9D25DB7F2000CEC2AA;
+			packageReferences = (
+				D2E9D8D725ECDF6900EE4027 /* XCRemoteSwiftPackageReference "CareKit" */,
+			);
 			productRefGroup = D29F8CA725DB7F2000CEC2AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -402,6 +413,7 @@
 				D29F8CAC25DB7F2000CEC2AA /* HomeView.swift in Sources */,
 				D2308DC725DCE3440017394E /* Action.swift in Sources */,
 				D2308D7625DB94240017394E /* Survey.swift in Sources */,
+				D2E9D8D425ECAB3400EE4027 /* LabResults.swift in Sources */,
 				D29F8CAA25DB7F2000CEC2AA /* NutritionLabSurveyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -724,6 +736,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D2E9D8D725ECDF6900EE4027 /* XCRemoteSwiftPackageReference "CareKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/carekit-apple/CareKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D2E9D8D825ECDF6900EE4027 /* CareKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2E9D8D725ECDF6900EE4027 /* XCRemoteSwiftPackageReference "CareKit" */;
+			productName = CareKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D29F8CB425DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodeld */ = {

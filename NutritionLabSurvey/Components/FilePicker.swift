@@ -1,40 +1,54 @@
 import SwiftUI
+import MobileCoreServices
+import UniformTypeIdentifiers
 
-struct FilePicker: UIViewControllerRepresentable {
-    final class Coordinator: NSObject, UIDocumentBrowserViewControllerDelegate {
+final class FilePicker: UIViewControllerRepresentable {
+    final class Coordinator: NSObject, UIDocumentPickerDelegate {
         let parent: FilePicker
         
         init(_ parent: FilePicker) {
             self.parent = parent
         }
         
-        func documentBrowser(
-            _ controller: UIDocumentBrowserViewController,
+        func documentPicker(
+            _ controller: UIDocumentPickerViewController,
             didPickDocumentsAt urls: [URL]
         ) {
-            urls.first.map(parent.onUrl)
+            parent.callback(urls[0])
+            parent.onDismiss()
+        }
+        
+        func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+            parent.onDismiss()
         }
     }
     
-    let onUrl: (URL) -> Void
-    
+    let callback: (URL) -> Void
+    let onDismiss: () -> Void
+
+    init(callback: @escaping (URL) -> Void, onDismiss: @escaping () -> Void) {
+        self.callback = callback
+        self.onDismiss = onDismiss
+    }
+
     func makeCoordinator() -> Coordinator {
         .init(self)
     }
-    
-    func makeUIViewController(context: Context) -> UIDocumentBrowserViewController {
-        let viewController = UIDocumentBrowserViewController()
-        
-        viewController.delegate = context.coordinator
-        
-        viewController.allowsDocumentCreation = false
-        viewController.allowsPickingMultipleItems = false
-        
-        return viewController
-    }
-    
+
     func updateUIViewController(
-        _ viewController: UIDocumentBrowserViewController,
+        _ uiViewController: UIDocumentPickerViewController,
         context: Context
     ) {}
+
+    func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
+        let controller = UIDocumentPickerViewController(
+            forOpeningContentTypes: [.pdf],
+            asCopy: true
+        )
+        
+        controller.delegate = context.coordinator
+        controller.allowsMultipleSelection = false
+        
+        return controller
+    }
 }
