@@ -23,6 +23,7 @@
 		D29F8CCC25DB7F2300CEC2AA /* NutritionLabSurveyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F8CCB25DB7F2300CEC2AA /* NutritionLabSurveyUITests.swift */; };
 		D2E9D8D425ECAB3400EE4027 /* LabResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9D8D325ECAB3400EE4027 /* LabResults.swift */; };
 		D2E9D8D925ECDF6900EE4027 /* CareKit in Frameworks */ = {isa = PBXBuildFile; productRef = D2E9D8D825ECDF6900EE4027 /* CareKit */; };
+		D2E9D8E925F70C7A00EE4027 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9D8E825F70C7A00EE4027 /* LandingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		D29F8CCB25DB7F2300CEC2AA /* NutritionLabSurveyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionLabSurveyUITests.swift; sourceTree = "<group>"; };
 		D29F8CCD25DB7F2300CEC2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2E9D8D325ECAB3400EE4027 /* LabResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabResults.swift; sourceTree = "<group>"; };
+		D2E9D8E825F70C7A00EE4027 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		D2308D8B25DCD5D60017394E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D2E9D8E825F70C7A00EE4027 /* LandingView.swift */,
 				D29F8CAB25DB7F2000CEC2AA /* HomeView.swift */,
 			);
 			path = Views;
@@ -414,6 +417,7 @@
 				D2308DC725DCE3440017394E /* Action.swift in Sources */,
 				D2308D7625DB94240017394E /* Survey.swift in Sources */,
 				D2E9D8D425ECAB3400EE4027 /* LabResults.swift in Sources */,
+				D2E9D8E925F70C7A00EE4027 /* LandingView.swift in Sources */,
 				D29F8CAA25DB7F2000CEC2AA /* NutritionLabSurveyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

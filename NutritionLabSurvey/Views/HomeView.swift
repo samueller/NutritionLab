@@ -3,6 +3,7 @@ import SafariServices
 import ResearchKit
 import HealthKit
 import CareKitUI
+//import GameKit
 
 struct HomeView: View {
 	static let task: ORKTask = {
@@ -14,6 +15,16 @@ struct HomeView: View {
             return result
         }
         
+//        let tree = GKDecisionTree(attribute: "Muscle cramps" as NSObjectProtocol)
+//        let root = tree.rootNode
+//        root?.createBranch(value: true, attribute: "Vegetables" as NSObjectProtocol)
+//        let highLdl = root?.createBranch(value: false, attribute: "LDL > 200" as NSObjectProtocol)
+//        highLdl?.createBranch(value: true, attribute: "Eat less saturated and trans fats" as NSObjectProtocol)
+//        highLdl?.createBranch(value: false, attribute: "Good" as NSObjectProtocol)
+//        let answers = ["Muscle cramps" : true]
+//        let decisionAction = tree.findAction(forAnswers: answers as [AnyHashable : NSObjectProtocol])
+//        print("Answer: \(String(describing: decisionAction!))")
+
 		let frequencyChoices = [
 			ORKTextChoice(text: "Less than once per month", value: NSNumber(1)),
 			ORKTextChoice(text: "Once per month to once per week", value: NSNumber(2)),
@@ -678,6 +689,7 @@ struct HomeView: View {
 			}
 			.padding(.horizontal)
 		}
+        .navigationBarBackButtonHidden(true)
 	}
 }
 
