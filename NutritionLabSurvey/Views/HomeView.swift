@@ -14,19 +14,19 @@ struct HomeView: View {
 			ORKTextChoice(text: "Once or twice per day", value: NSNumber(5)),
 			ORKTextChoice(text: "More than 2 up to 6 times per day", value: NSNumber(6)),
 			ORKTextChoice(text: "More than 6 times per day", value: NSNumber(7))
-			]
+		]
 		let yearsChoices = [
 			ORKTextChoice(text: "No, or yes for up to 1 year", value: NSNumber(1)),
 			ORKTextChoice(text: "Yes, for over 1 and up to 5 years", value: NSNumber(2)),
 			ORKTextChoice(text: "Yes, for over 5 and up to 10 years", value: NSNumber(3)),
 			ORKTextChoice(text: "Yes, for over 10 years", value: NSNumber(4)),
-			]
+		]
 		let pointScale = [
 			ORKTextChoice(text: "Never", value: NSNumber(0)),
 			ORKTextChoice(text: "Rarely", value: NSNumber(1)),
 			ORKTextChoice(text: "Occasionally", value: NSNumber(2)),
 			ORKTextChoice(text: "Frequently", value: NSNumber(3)),
-			]
+		]
 
 		var steps = [ORKStep]()
 		
@@ -233,7 +233,7 @@ struct HomeView: View {
 				.sheet(isPresented: $isUploading, onDismiss: {
 					isUploading = false
 				}) {
-					FilePicker(callback: { (url:URL) in
+					FilePicker { url in
 //							do {
 //								let contents = try Data(contentsOf: url)
 //								print("contents")
@@ -306,9 +306,9 @@ struct HomeView: View {
 							"TRIGLYCERIDES": 61
 						]
 						isViewingLabPlan = true
-					}, onDismiss: {
+					} onDismiss: {
 						isUploading = false
-					})
+					}
 				}.edgesIgnoringSafeArea(.all)
 				Spacer()
 				Action(label: "View Lab and Nutrition Plan", disabled: results == nil) {
@@ -320,10 +320,10 @@ struct HomeView: View {
 					ScrollView {
 					VStack(alignment: HorizontalAlignment.leading, spacing: 10) {
 						Section(header: Text("Lab Results").font(.title).foregroundColor(Color(red: 0.75, green: 0.75, blue: 0.75))) {
-							ForEach(biomarkerKeys, id: \.self) { biomarker in
-								let bio = biomarkers[biomarker]!
-								let result = results![biomarker]!
-								Text("\(bio.name): \(result.clean)\(bio.units)\n\(result < bio.refRange.lowerBound ? "Below" : result > bio.refRange.upperBound ? "Above" : "Within") range \(bio.refRange.lowerBound.clean)\(bio.units) to \(bio.refRange.upperBound.clean)\(bio.units)").foregroundColor(bio.refRange.contains(result) ? Color(red: 0, green: 0.3, blue: 0) : Color(red: 0.3, green: 0, blue: 0))
+							ForEach(biomarkers) { biomarker in
+								let result = results![biomarker.id]!
+								
+								Text("\(biomarker.name): \(result.formatted)\(biomarker.units)\n\(result < biomarker.refRange.lowerBound ? "Below" : result > biomarker.refRange.upperBound ? "Above" : "Within") range \(biomarker.refRange.lowerBound.formatted)\(biomarker.units) to \(biomarker.refRange.upperBound.formatted)\(biomarker.units)").foregroundColor(biomarker.refRange.contains(result) ? .init(red: 0, green: 0.3, blue: 0) : .init(red: 0.3, green: 0, blue: 0))
 							}
 						}
 						Divider()

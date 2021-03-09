@@ -2,7 +2,7 @@ import SwiftUI
 import MobileCoreServices
 import UniformTypeIdentifiers
 
-final class FilePicker: UIViewControllerRepresentable {
+struct FilePicker: UIViewControllerRepresentable {
 	final class Coordinator: NSObject, UIDocumentPickerDelegate {
 		let parent: FilePicker
 		

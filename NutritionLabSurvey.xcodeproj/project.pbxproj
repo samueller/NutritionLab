@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		11D1E9E6D8BB036B407CFE32 /* Pods_NutritionLabSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE86D2FC69197F0AF8B4CC14 /* Pods_NutritionLabSurvey.framework */; };
+		4D0054D925F6FDEC00F4076A /* BulletGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0054D825F6FDEC00F4076A /* BulletGraph.swift */; };
+		4D89E98A25F4CF940032E5C6 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89E98925F4CF940032E5C6 /* Float.swift */; };
 		D2308D7625DB94240017394E /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2308D7525DB94240017394E /* Survey.swift */; };
 		D2308D8E25DCD5FA0017394E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2308D8D25DCD5FA0017394E /* UIViewController.swift */; };
 		D2308D9D25DCD9140017394E /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2308D9C25DCD9140017394E /* Lab.swift */; };
@@ -57,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		0809869B10DC6739368D935E /* Pods-NutritionLabSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionLabSurvey.release.xcconfig"; path = "Target Support Files/Pods-NutritionLabSurvey/Pods-NutritionLabSurvey.release.xcconfig"; sourceTree = "<group>"; };
+		4D0054D825F6FDEC00F4076A /* BulletGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletGraph.swift; sourceTree = "<group>"; };
+		4D89E98925F4CF940032E5C6 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		607D9327CBBCA580072564F3 /* Pods-NutritionLabSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutritionLabSurvey.debug.xcconfig"; path = "Target Support Files/Pods-NutritionLabSurvey/Pods-NutritionLabSurvey.debug.xcconfig"; sourceTree = "<group>"; };
 		AE86D2FC69197F0AF8B4CC14 /* Pods_NutritionLabSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NutritionLabSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2308D7525DB94240017394E /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				D2308D8D25DCD5FA0017394E /* UIViewController.swift */,
+				4D89E98925F4CF940032E5C6 /* Float.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 				D2308DC625DCE3440017394E /* Action.swift */,
 				D2308D7525DB94240017394E /* Survey.swift */,
 				D2308DCC25DCE5850017394E /* FilePicker.swift */,
+				4D0054D825F6FDEC00F4076A /* BulletGraph.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -405,11 +411,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D89E98A25F4CF940032E5C6 /* Float.swift in Sources */,
 				D2308DCD25DCE5850017394E /* FilePicker.swift in Sources */,
 				D29F8CB625DB7F2300CEC2AA /* NutritionLabSurvey.xcdatamodeld in Sources */,
 				D29F8CB325DB7F2300CEC2AA /* Persistence.swift in Sources */,
 				D2308D8E25DCD5FA0017394E /* UIViewController.swift in Sources */,
 				D2308D9D25DCD9140017394E /* Lab.swift in Sources */,
+				4D0054D925F6FDEC00F4076A /* BulletGraph.swift in Sources */,
 				D29F8CAC25DB7F2000CEC2AA /* HomeView.swift in Sources */,
 				D2308DC725DCE3440017394E /* Action.swift in Sources */,
 				D2308D7625DB94240017394E /* Survey.swift in Sources */,
