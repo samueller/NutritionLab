@@ -632,9 +632,22 @@ struct HomeView: View {
 						Section(header: Text("Nutrition").font(.title).foregroundColor(Color(red: 0.5, green: 0.25, blue: 0))) {
 							Section(header: Text("Blood Sugar").font(.title2)) {
 								Text("Limit processed carbohydrates and foods with added sugar to support healthy blood sugar response. Eliminate high sugar drinks including soda and fruit juice.")
-								Text("Eat macronutrient balanced meals that contain protein healthy fats, non-processed carbohydrates like whole fruit, potato, rice and beans.")
+//                                Text("Eat macronutrient balanced meals that contain protein healthy fats, non-processed carbohydrates like whole fruit, potato, rice and beans.")
+                                Text("Eat macronutrient balanced meals that contain protein healthy fats, non-processed carbohydrates like:")
+                                VStack(alignment: .leading, spacing: 0, content: {
+                                    HStack(spacing: 0) {
+                                        Text("• ")
+                                        Button("Whole fruit") {}
+                                    }
+                                    Text("• Potato")
+                                    Text("• Rice and beans")
+                                })
 								Text("Limit grains and high glycemic foods like candy, cookies, breads, crackers, and dried fruit. Limit alcohol until blood sugar is back in range and only drink alcohol with a macro balanced meal. Plan meals to combine protein, healthy fats, and vegetables with each carbohydrate serving to add fiber and to slow down the effect of carbohydrates in your system. Do not eat carbohydrates like fruit alone. Try to snack on healthy fat and protein instead of sugars. Increase protein, vegetables, and healthy fat amounts in meals in order to eliminate the need to snack or graze all day.")
-								Text("Eat macro balanced meals and avoid grazing.")
+                                HStack(spacing: 0) {
+                                    Text("Eat ")
+                                    Button("macro balanced meals") {}
+                                    Text(" and avoid grazing.")
+                                }
 								Text("Keep non-processed and non-veggie carbohydrates at less than 90 grams per day to avoid weight gain and improve blood sugar.")
 								Text("Optionally keep non-processed and non-veggie carbohydrates at less than or equal to 60 grams per day to lose weight")
 							}
@@ -643,7 +656,12 @@ struct HomeView: View {
 //							Section(header: Text("Low Blood Sugar and High Cholesterol").font(.title2), content: {
 								Text("Add healthy fats and consider eating smaller meals more often to avoid blood sugar crashes. You may want to work with a professional to get your blood sugar back in balance if you are crashing too often.")
 								Text("It's important with blood sugar crashes that you only eat carbohydrates that are lower on the glycemic scale and less processed. You may need 4 to 6 smaller meals with your macro amounts of protein, complex carbs, healthy fats, and vegetables.")
-								Text("You can also add a protein shake or higher protein with vegetable snack at times when your blood sugar usually crashes. Fix meals, like lunch, that precede a crash.")
+                                HStack(spacing: 0) {
+                                    Text("Optionally add a ")
+                                    Button("protein shake") {}
+                                }
+                                Text("or higher protein with vegetable snack at times when your blood sugar usually crashes. Fix meals, like lunch, that precede a crash.")
+//                                Text("You can also add a protein shake or higher protein with vegetable snack at times when your blood sugar usually crashes. Fix meals, like lunch, that precede a crash.")
 							}
 							Divider()
 							Section(header: Text("Vitamins & Supplements").font(.title2)) {
@@ -679,12 +697,19 @@ struct HomeView: View {
 								Text("If your job is sedentary, a standing desk can help.")
 								Text("Work with someone to get your blood sugar in balance if you can't do it yourself.")
 								Text("Once your blood sugar is more balanced you should be able to exercise or at least stretch or walk without eating first.")
-								Text("Generally work on deep breathing and stress relief.")
+                                HStack(spacing: 0) {
+                                    Text("Work on ")
+                                    Button("deep breathing") {}
+                                    Text(" and ")
+                                    Button("stress relief") {}
+                                    Text(".")
+                                }
+//								Text("Generally work on deep breathing and stress relief.")
 								Text("Stress can affect all of your lab results. Try to do some calming meditation before your blood draw, especially if you get stressed out by labs or blood draws.")
 							}
 						}
 					}}.padding()
-				}.navigationBarTitle("Nutrition Lab")
+                }.navigationBarTitle("Nutrition Lab")
 				Spacer()
 			}
 			.padding(.horizontal)
