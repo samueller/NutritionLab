@@ -3,9 +3,28 @@ import SafariServices
 import ResearchKit
 import HealthKit
 import CareKitUI
+//import GameKit
 
 struct HomeView: View {
 	static let task: ORKTask = {
+        func stringsToTextChoices(_ strings: [String]) -> [ORKTextChoice] {
+            var result: [ORKTextChoice] = []
+            for (i, string) in strings.enumerated() {
+                result.append(ORKTextChoice(text: string, value: NSNumber(value: i+1)))
+            }
+            return result
+        }
+        
+//        let tree = GKDecisionTree(attribute: "Muscle cramps" as NSObjectProtocol)
+//        let root = tree.rootNode
+//        root?.createBranch(value: true, attribute: "Vegetables" as NSObjectProtocol)
+//        let highLdl = root?.createBranch(value: false, attribute: "LDL > 200" as NSObjectProtocol)
+//        highLdl?.createBranch(value: true, attribute: "Eat less saturated and trans fats" as NSObjectProtocol)
+//        highLdl?.createBranch(value: false, attribute: "Good" as NSObjectProtocol)
+//        let answers = ["Muscle cramps" : true]
+//        let decisionAction = tree.findAction(forAnswers: answers as [AnyHashable : NSObjectProtocol])
+//        print("Answer: \(String(describing: decisionAction!))")
+
 		let frequencyChoices = [
 			ORKTextChoice(text: "Less than once per month", value: NSNumber(1)),
 			ORKTextChoice(text: "Once per month to once per week", value: NSNumber(2)),
@@ -26,7 +45,21 @@ struct HomeView: View {
 			ORKTextChoice(text: "Rarely", value: NSNumber(1)),
 			ORKTextChoice(text: "Occasionally", value: NSNumber(2)),
 			ORKTextChoice(text: "Frequently", value: NSNumber(3)),
-		]
+			]
+        let foodChoices = stringsToTextChoices([
+            "Candy",
+            "Fast food",
+            "Milk, dairy, cheese, or ice cream",
+            "Sodas with sugar",
+            "Fake sugar products",
+            "Cheese",
+            "Sugary treats or desserts",
+            "Bread",
+            "Pizza",
+            "Chips, pretzels, or salty snacks",
+            "Diet sodas",
+            "Wine, beer, or liquor"
+        ])
 
 		var steps = [ORKStep]()
 		
@@ -57,9 +90,9 @@ struct HomeView: View {
 			return step
 		}
 		
-		func createPointScaleGroup(_ title: String, _ questions: [String]) -> ORKFormStep {
+        func createPointScaleGroup(_ title: String, _ optional: Bool, _ questions: [String]) -> ORKFormStep {
 			let formStep = ORKFormStep(identifier: titleToId(title), title: title, text: nil)
-			formStep.isOptional = false
+			formStep.isOptional = optional
 			var formItems = [ORKFormItem(sectionTitle: "Select frequency")]
 			for question in questions {
 				let item = ORKFormItem(identifier: titleToId(question), text: "\(question) ", detailText: nil, learnMoreItem: nil, showsProgress: true, answerFormat: .valuePickerAnswerFormat(with: pointScale), tagText: nil, optional: false)
@@ -69,6 +102,45 @@ struct HomeView: View {
 			steps.append(formStep)
 			return formStep
 		}
+
+        func createYesNoGroup(_ title: String, _ optional: Bool, _ questions: [String]) -> ORKFormStep {
+            let formStep = ORKFormStep(identifier: titleToId(title), title: title, text: nil)
+            formStep.isOptional = optional
+            var formItems = [ORKFormItem(sectionTitle: "Select Yes or No")]
+            for question in questions {
+                let item = ORKFormItem(identifier: titleToId(question), text: "\(question) ", detailText: nil, learnMoreItem: nil, showsProgress: true, answerFormat: .booleanAnswerFormat(), tagText: nil, optional: false)
+                formItems.append(item)
+            }
+            formStep.formItems = formItems
+            steps.append(formStep)
+            return formStep
+        }
+
+        func createScaleGroup(_ title: String, _ optional: Bool, _ maxDesc: String, _ minDesc: String, _ questions: [String]) -> ORKFormStep {
+            let formStep = ORKFormStep(identifier: titleToId(title), title: title, text: nil)
+            formStep.isOptional = optional
+            var formItems = [ORKFormItem(sectionTitle: "Select ratings")]
+            for question in questions {
+                let item = ORKFormItem(identifier: titleToId(question), text: "\(question) ", detailText: nil, learnMoreItem: nil, showsProgress: true, answerFormat: .scale(withMaximumValue: 10, minimumValue: 0, defaultValue: 5, step: 1, vertical: false, maximumValueDescription: maxDesc, minimumValueDescription: minDesc), tagText: nil, optional: false)
+                formItems.append(item)
+            }
+            formStep.formItems = formItems
+            steps.append(formStep)
+            return formStep
+        }
+        
+        func createMultSelectionGroup(_ title: String, _ optional: Bool, _ questions: [String:[ORKTextChoice]]) -> ORKFormStep {
+            let formStep = ORKFormStep(identifier: titleToId(title), title: title, text: nil)
+            formStep.isOptional = optional
+            var formItems = [ORKFormItem(sectionTitle: "Select all that apply")]
+            for (question, choices) in questions {
+                let item = ORKFormItem(identifier: titleToId(question), text: "\(question) ", detailText: nil, learnMoreItem: nil, showsProgress: true, answerFormat: .choiceAnswerFormat(with: .multipleChoice, textChoices: choices), tagText: nil, optional: false)
+                formItems.append(item)
+            }
+            formStep.formItems = formItems
+            steps.append(formStep)
+            return formStep
+        }
 
 		let basicInfo = ORKFormStep(identifier: "basic", title: "Basic Information", text: nil)
 		basicInfo.isOptional = false
@@ -89,7 +161,7 @@ struct HomeView: View {
 		
 		steps += [basicInfo]
 		
-		let digestion = createPointScaleGroup("Digestion", [
+        let digestion = createPointScaleGroup("Digestion", true, [
 			"Does eating greasy foods upset  \nyour system? ",
 			"Do you get gastrointestinal issues  \nfrom eating fatty or greasy  \nfoods like fries or donuts? ",
 			"Do you get gastrointestinal issues  \nfrom eating healthy fatty foods  \nlike avocados or nut butters? ",
@@ -104,7 +176,7 @@ struct HomeView: View {
 			"Have you had gallstones?"
 		])
 
-		let cholesterol = createPointScaleGroup("Cholesterol", [
+		let cholesterol = createPointScaleGroup("Cholesterol", true, [
 			"Has cholesterol been high?",
 			"Have triglycerides been high?",
 			"Are you concerned about cholesterol?",
@@ -114,22 +186,249 @@ struct HomeView: View {
 			"Is your doctor concerned \nabout cholesterol?"
 		])
 		
-		let nose = createPointScaleGroup("Nose", [])
-		let nutrients = createPointScaleGroup("Nutrients", [])
-		let nails = createPointScaleGroup("Nails", [])
-		let bloodSugarr = createPointScaleGroup("Blood Sugar", [])
-		let hair = createPointScaleGroup("Hair", [])
-		let thyroid = createPointScaleGroup("Thyroid", [])
-		let skin = createPointScaleGroup("Skin", [])
-		let immuneSystem = createPointScaleGroup("Immune System", [])
-		let yeastFungusGut = createPointScaleGroup("Yeast, Fungus, & Gut", [])
-		let heart = createPointScaleGroup("Heart", [])
-		let lungs = createPointScaleGroup("Lungs", [])
-		let energy = createPointScaleGroup("Energy", [])
-		let digestiveTract = createPointScaleGroup("Digestive Tract", [])
-		let jointsMuscleBone = createPointScaleGroup("Joints, Muscle, & Bone", [])
-		let weightLoss = createPointScaleGroup("Weight Loss", [])
-		let moods = createPointScaleGroup("Moods", [])
+		let nose = createPointScaleGroup("Nose", true, [
+            "Stuffy nose",
+            "Sinus problems",
+            "Hay fever",
+            "Sneezing attacks",
+            "Excessive mucus formation",
+            "Lost sense of smell",
+            "Snoring"
+        ])
+        
+		let nutrients = createPointScaleGroup("Nutrients", true, [
+            "Acid foods upset",
+            "Wound up & difficult to relax",
+            "Dry mouth, eyes, or nose",
+            "Strong light irritates you",
+            "Unable to relax & easily startled",
+            "Slow healing of cuts & wounds",
+            "Heart pounds after eating",
+            "Joint stiffness",
+            "Leg or toe muscle cramps at night",
+            "Eyes blink too often",
+            "Indigestion after meals",
+            "Bruise easily",
+            "Anemia",
+            "Low iron",
+            "Energy lower than it should be",
+            "Nose bleeds with unknown cause",
+            "Drowsy at random times",
+            "Bone spurs",
+            "Kidney stones",
+            "Muscle cramps in legs",
+            "Muscle cramps in general"
+        ])
+		let nails = createPointScaleGroup("Nails", true, [
+            "Spoon shaped",
+            "Brittle and cracking",
+            "Discolored",
+            "White spots",
+            "Lines or stripes",
+            "Peeling",
+            "Nails don't grow",
+            "Weak nails"
+        ])
+		let bloodSugar = createPointScaleGroup("Blood Sugar", true, [
+            "Eat when nervous",
+            "Still hungry right after meals",
+            "Excessive appetite",
+            "Irritable before meals",
+            "Often hungry between meals",
+            "Shaky when hungry",
+            "Hungry most of the time",
+            "Hangry when need to eat",
+            "Eating helps feel less tired",
+            "Eating helps feel more tired",
+            "Lightheaded or dizzy when meals  \ndelayed ",
+            "Heart palpitates with late or  \nmissed meals ",
+            "Headaches in the morning",
+            "Headaches in the afternoon",
+            "Overeating sweets feels bad",
+            "Nausea with sugary foods",
+            "Wake after 2-4 hours of sleep",
+            "Hard to go back to sleep when  \nwoken too early ",
+            "Mood swings",
+            "Anxiety or heart palpitations  \nwith too much sugar",
+            "Depressed",
+            "Crave sugary foods",
+            "Need to snack",
+            "Prefer to snack",
+            "Eating breakfast increases hunger  \nall day ",
+            "Must eat breakfast or will feel bad",
+            "Yawn in afternoons",
+            "Yawn frequently at all times",
+            "Need a nap after lunch"
+        ])
+		let hair = createPointScaleGroup("Hair", true, [
+            "Hair thinning",
+            "Hair loss",
+            "Loss of outer eyebrow hair",
+            "Premature graying",
+            "Hair breaks or is dry",
+            "Poor or slow hair growth",
+            "Loss of shine, volume, or body"
+        ])
+		let thyroid = createPointScaleGroup("Thyroid", true, [
+            "Morning headaches then gone",
+            "Sluggish in morning",
+            "Weight gain",
+            "Hard to lose weight",
+            "Low appetite with weight gain",
+            "Constipation",
+            "Less than 1 regular bowel movement  \nper day ",
+            "Stools like hard little rocks",
+            "Mental sluggishness",
+            "Brain fog",
+            "Reduced motivation or initiative",
+            "Dry scaly skin",
+            "Feel cold",
+            "Cold hands and feet",
+            "Inability to lose weight dieting"
+        ])
+		let skin = createPointScaleGroup("Skin", true, [
+            "Acne",
+            "Dry skin",
+            "Flushing",
+            "Hives or rashes",
+            "Bumps on back of arms",
+            "Excessive sweating"
+        ])
+		let immuneSystem = createPointScaleGroup("Immune System", true, [
+            "Get colds",
+            "Get the flu",
+            "Deal with chronic illness",
+            "Ear aches or infections",
+            "Immune system seems to overreact",
+            "Immune system seems to underreact",
+            "Get sick",
+            "Cough",
+            "Allergies"
+        ])
+		let yeastFungusGut = createPointScaleGroup("Yeast, Fungus, & Gut", true, [
+            "Frequent or urgent urination",
+            "Genital discharge",
+            "Itching in genital or anal areas",
+            "Itching all over body",
+            "Eat sugary foods",
+            "Crave sugary foods",
+            "Low blood sugar if too long without  \neating ",
+            "Mood swings",
+            "White or brownish coating on tongue",
+            "Poor memory",
+            "Poor concentration",
+            "Too much mucus in mouth or throat",
+            "Sinus issues",
+            "Need to clear throat"
+        ])
+		let heart = createPointScaleGroup("Heart", true, [
+            "Irregular or skipped beats",
+            "Chest pain",
+            "Symptoms related to cardiac issues",
+            "Shortness of breath upon exertion",
+            "Open windows in a closed room",
+            "Rapid or pounding heartbeat",
+            "Concerned about cardiac health",
+            "Numbness in hands, legs, or feet",
+            "Severe breathlessness"
+        ])
+		let lungs = createPointScaleGroup("Lungs", true, [
+            "Chest congestion",
+            "Shortness of breath",
+            "Asthma or bronchitis",
+            "Difficulty breathing"
+        ])
+		let energy = createPointScaleGroup("Energy", true, [
+            "Fatigue",
+            "Lethargy",
+            "Hyperactivity",
+            "Insomonia",
+            "Sleep disruptions",
+            "Energy drops after meals",
+            "Energy drops in afternoon",
+            "Energy swings",
+            "Wake up in middle of sleep",
+            "Energy seems lower than should be",
+            "Concerned aboout low energy",
+            "Lack energy to do everything wanted"
+        ])
+		let digestiveTract = createPointScaleGroup("Digestive Tract", true, [
+            "Nausea",
+            "Vomiting",
+            "Diarrhea",
+            "Constipation",
+            "Alternating diarrhea & constipation",
+            "Bloating",
+            "Belching",
+            "Gas/flatulence",
+            "Heartburn",
+            "Upper GI pain",
+            "Lower abdominal pain"
+        ])
+		let jointsMuscleBone = createPointScaleGroup("Joints, Muscle, & Bone", true, [
+            "Pain/aches in joints",
+            "Arthritis",
+            "Stiffness/limited movement",
+            "Pain/aches in muscles",
+            "Weakness or strength loss",
+            "Restless legs",
+            "Bone pain",
+            "Broken bones",
+            "Muscle cramps"
+        ])
+		let weightLoss = createPointScaleGroup("Weight Loss", true, [
+            "Weight gain over 5 lbs",
+            "Fluid retention or swollen",
+            "Hard to build muscle",
+            "Concerned about muscle loss",
+            "Concerned about being overweight",
+            "On diets or weight loss programs"
+        ])
+		let moods = createPointScaleGroup("Moods", true, [
+            "Anxiety, worry, fear, or nervousness",
+            "Anger, irritability, or agitation",
+            "Depression",
+            "Mood affected by eating",
+            "Mood affected by weight",
+            "Mood affected by bloating",
+            "Weight affected by mood",
+            "Sugary foods causes irritability",
+            "Diagnosed eating disorder",
+            "Suspected eating disorder",
+            "Weight or looks can ruin day or mood"
+        ])
+        
+        let hunger = createScaleGroup("Hunger", false, "So hungry\nit hurts", "Zero\nhunger", [
+            "How hungry are you before breakfast?",
+            "How hungry are you at breakfast?",
+            "How hungry are you at lunch?",
+            "How hungry are you at snack time after lunch and before dinner?",
+            "How hungry are you at dinner?",
+            "How hungry are you after dinner?",
+        ])
+        
+        let yesNo = createYesNoGroup("Simple Questions", true, [
+            "Diagnosed with gastrointestinal issues?",
+            "Suspected autoimmune issue?",
+            "Diagnosed autoimmune issue?",
+            "Suspect cardiac or heart issues?",
+            "Heart or cardiac issues run in family?",
+            "Diagnosed with heart or cardiac issues?",
+            "Take medication regularly?",
+            "Take medication occasionally or as needed?",
+            "Diagnosed with thyroid issue?",
+            "Suspected undiagnosed thyroid issue?",
+            "Have an eating disorder?",
+            "Gallbladder issues?",
+            "Gallbladder removed?"
+        ])
+        
+        let foods = createMultSelectionGroup("Foods", true, [
+            "Which of the following do you eat less than once a month?": foodChoices,
+            "Which of the following do you never eat or do your best to avoid?": foodChoices,
+            "Which of the following do you eat more than once a month and less than once a day?": foodChoices,
+            "Which of the following do you eat more than once a day?": foodChoices
+        ])
 
 //		let hair = createYearsStep("Hair Loss", "Do you suffer from hair loss?")
 //		let drySkin = createYearsStep("Dry Skin", "Do you have dry skin?")
@@ -209,7 +508,9 @@ struct HomeView: View {
 							}
 							
 							if let answer = answers.first {
-								lab = labs[answer - 1]
+                                if answer > 0 {
+                                    lab = labs[answer - 1]
+                                }
 							}
 						}
 						
@@ -331,9 +632,22 @@ struct HomeView: View {
 						Section(header: Text("Nutrition").font(.title).foregroundColor(Color(red: 0.5, green: 0.25, blue: 0))) {
 							Section(header: Text("Blood Sugar").font(.title2)) {
 								Text("Limit processed carbohydrates and foods with added sugar to support healthy blood sugar response. Eliminate high sugar drinks including soda and fruit juice.")
-								Text("Eat macronutrient balanced meals that contain protein healthy fats, non-processed carbohydrates like whole fruit, potato, rice and beans.")
+//                                Text("Eat macronutrient balanced meals that contain protein healthy fats, non-processed carbohydrates like whole fruit, potato, rice and beans.")
+                                Text("Eat macronutrient balanced meals that contain protein healthy fats, non-processed carbohydrates like:")
+                                VStack(alignment: .leading, spacing: 0, content: {
+                                    HStack(spacing: 0) {
+                                        Text("• ")
+                                        Button("Whole fruit") {}
+                                    }
+                                    Text("• Potato")
+                                    Text("• Rice and beans")
+                                })
 								Text("Limit grains and high glycemic foods like candy, cookies, breads, crackers, and dried fruit. Limit alcohol until blood sugar is back in range and only drink alcohol with a macro balanced meal. Plan meals to combine protein, healthy fats, and vegetables with each carbohydrate serving to add fiber and to slow down the effect of carbohydrates in your system. Do not eat carbohydrates like fruit alone. Try to snack on healthy fat and protein instead of sugars. Increase protein, vegetables, and healthy fat amounts in meals in order to eliminate the need to snack or graze all day.")
-								Text("Eat macro balanced meals and avoid grazing.")
+                                HStack(spacing: 0) {
+                                    Text("Eat ")
+                                    Button("macro balanced meals") {}
+                                    Text(" and avoid grazing.")
+                                }
 								Text("Keep non-processed and non-veggie carbohydrates at less than 90 grams per day to avoid weight gain and improve blood sugar.")
 								Text("Optionally keep non-processed and non-veggie carbohydrates at less than or equal to 60 grams per day to lose weight")
 							}
@@ -342,7 +656,12 @@ struct HomeView: View {
 //							Section(header: Text("Low Blood Sugar and High Cholesterol").font(.title2), content: {
 								Text("Add healthy fats and consider eating smaller meals more often to avoid blood sugar crashes. You may want to work with a professional to get your blood sugar back in balance if you are crashing too often.")
 								Text("It's important with blood sugar crashes that you only eat carbohydrates that are lower on the glycemic scale and less processed. You may need 4 to 6 smaller meals with your macro amounts of protein, complex carbs, healthy fats, and vegetables.")
-								Text("You can also add a protein shake or higher protein with vegetable snack at times when your blood sugar usually crashes. Fix meals, like lunch, that precede a crash.")
+                                HStack(spacing: 0) {
+                                    Text("Optionally add a ")
+                                    Button("protein shake") {}
+                                }
+                                Text("or higher protein with vegetable snack at times when your blood sugar usually crashes. Fix meals, like lunch, that precede a crash.")
+//                                Text("You can also add a protein shake or higher protein with vegetable snack at times when your blood sugar usually crashes. Fix meals, like lunch, that precede a crash.")
 							}
 							Divider()
 							Section(header: Text("Vitamins & Supplements").font(.title2)) {
@@ -378,16 +697,24 @@ struct HomeView: View {
 								Text("If your job is sedentary, a standing desk can help.")
 								Text("Work with someone to get your blood sugar in balance if you can't do it yourself.")
 								Text("Once your blood sugar is more balanced you should be able to exercise or at least stretch or walk without eating first.")
-								Text("Generally work on deep breathing and stress relief.")
+                                HStack(spacing: 0) {
+                                    Text("Work on ")
+                                    Button("deep breathing") {}
+                                    Text(" and ")
+                                    Button("stress relief") {}
+                                    Text(".")
+                                }
+//								Text("Generally work on deep breathing and stress relief.")
 								Text("Stress can affect all of your lab results. Try to do some calming meditation before your blood draw, especially if you get stressed out by labs or blood draws.")
 							}
 						}
 					}}.padding()
-				}.navigationBarTitle("Nutrition Lab")
+                }.navigationBarTitle("Nutrition Lab")
 				Spacer()
 			}
 			.padding(.horizontal)
 		}
+        .navigationBarBackButtonHidden(true)
 	}
 }
 
