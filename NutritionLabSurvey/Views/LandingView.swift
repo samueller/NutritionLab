@@ -22,7 +22,7 @@ struct LandingView: View {
     var body: some View {
         VStack {
             TabView(selection: $currentPage) {
-                ForEach (0 ..< self.pages.count) { index in
+                ForEach(0..<self.pages.count) { index in
                     LandingViewTab(page: self.pages[index])
                         .tag(index)
                         .padding()

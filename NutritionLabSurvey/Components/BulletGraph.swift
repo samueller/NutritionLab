@@ -13,13 +13,19 @@ struct BulletGraph: View {
 	
 	let units: String
 	
+	var clamped: Float {
+		min(
+			max(value, 2 * range.lowerBound - range.upperBound),
+			2 * range.upperBound - range.lowerBound
+		)
+	}
+	
 	var ok: Bool {
-		value >= range.upperBound * 1 / 3 &&
-		value <= range.upperBound * 2 / 3
+		value >= range.lowerBound && value <= range.upperBound
 	}
 	
 	var position: CGFloat {
-		width * .init(value / range.upperBound)
+		(width / 3) * .init(1 + clamped / (range.upperBound - range.lowerBound))
 	}
 	
 	var scale: some View {
@@ -38,17 +44,18 @@ struct BulletGraph: View {
 	
 	var numbers: some View {
 		HStack {
-			ForEach(0..<Self.SEGMENTS + 1) { position in
-				Text(String(range.upperBound * .init(position) / .init(Self.SEGMENTS)))
-				if position < Self.SEGMENTS { Spacer() }
-			}
+			Spacer()
+			Text(range.lowerBound.formatted)
+			Spacer()
+			Text(range.upperBound.formatted)
+			Spacer()
 		}
 	}
 	
 	var overlay: some View {
 		ZStack(alignment: .topLeading) {
 			HStack {
-				Text(String(value))
+				Text(value.formatted)
 					.font(.title)
 					.bold()
 					.foregroundColor(ok ? .green : .red)
@@ -59,7 +66,7 @@ struct BulletGraph: View {
 			.padding(.vertical, 8)
 			.background(Color(ok ? #colorLiteral(red: 0.862745098, green: 0.9529411765, blue: 0.8784313725, alpha: 1) : #colorLiteral(red: 0.968627451, green: 0.8078431373, blue: 0.8039215686, alpha: 1)))
 			.cornerRadius(100)
-			.offset(x: -20, y: -70)
+			.offset(x: value >= range.upperBound ? -115 : -15, y: -70)
 			.zIndex(1)
 			Rectangle()
 				.foregroundColor(ok ? .green : .red)
@@ -85,7 +92,8 @@ struct BulletGraph: View {
 			}
 			overlay
 		}
-		.frame(width: width)
+		.frame(width: width, height: 115)
+		.offset(y: 48)
 	}
 }
 
@@ -94,7 +102,7 @@ struct BulletGraph_Previews: PreviewProvider {
 		BulletGraph(
 			width: UIScreen.main.bounds.size.width - 20 * 2,
 			range: 0...150,
-			value: 100,
+			value: 1000,
 			units: "mg/dL"
 		)
 	}
