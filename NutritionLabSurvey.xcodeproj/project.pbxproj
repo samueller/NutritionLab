@@ -26,6 +26,9 @@
 		D2E9D8D425ECAB3400EE4027 /* LabResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9D8D325ECAB3400EE4027 /* LabResults.swift */; };
 		D2E9D8D925ECDF6900EE4027 /* CareKit in Frameworks */ = {isa = PBXBuildFile; productRef = D2E9D8D825ECDF6900EE4027 /* CareKit */; };
 		D2E9D8E925F70C7A00EE4027 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9D8E825F70C7A00EE4027 /* LandingView.swift */; };
+		D2E9D8F125F756B200EE4027 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9D8F025F756B200EE4027 /* SearchView.swift */; };
+		D2E9D8F525F7578A00EE4027 /* SearchLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9D8F425F7578A00EE4027 /* SearchLink.swift */; };
+		D2E9D8FB25F758CC00EE4027 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9D8FA25F758CC00EE4027 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		D29F8CCD25DB7F2300CEC2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2E9D8D325ECAB3400EE4027 /* LabResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabResults.swift; sourceTree = "<group>"; };
 		D2E9D8E825F70C7A00EE4027 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		D2E9D8F025F756B200EE4027 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D2E9D8F425F7578A00EE4027 /* SearchLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLink.swift; sourceTree = "<group>"; };
+		D2E9D8FA25F758CC00EE4027 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,7 @@
 			children = (
 				D2E9D8E825F70C7A00EE4027 /* LandingView.swift */,
 				D29F8CAB25DB7F2000CEC2AA /* HomeView.swift */,
+				D2E9D8F025F756B200EE4027 /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,6 +164,7 @@
 				D2308D7525DB94240017394E /* Survey.swift */,
 				D2308DCC25DCE5850017394E /* FilePicker.swift */,
 				4D0054D825F6FDEC00F4076A /* BulletGraph.swift */,
+				D2E9D8F425F7578A00EE4027 /* SearchLink.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -188,6 +196,7 @@
 			children = (
 				D29F8CA925DB7F2000CEC2AA /* NutritionLabSurveyApp.swift */,
 				D29F8CB225DB7F2300CEC2AA /* Persistence.swift */,
+				D2E9D8FA25F758CC00EE4027 /* Constants.swift */,
 				D2308D8C25DCD5EF0017394E /* Extensions */,
 				D2308D9B25DCD9070017394E /* Models */,
 				D2308DC525DCE33A0017394E /* Components */,
@@ -421,12 +430,15 @@
 				D2308D8E25DCD5FA0017394E /* UIViewController.swift in Sources */,
 				D2308D9D25DCD9140017394E /* Lab.swift in Sources */,
 				4D0054D925F6FDEC00F4076A /* BulletGraph.swift in Sources */,
+				D2E9D8FB25F758CC00EE4027 /* Constants.swift in Sources */,
 				D29F8CAC25DB7F2000CEC2AA /* HomeView.swift in Sources */,
 				D2308DC725DCE3440017394E /* Action.swift in Sources */,
 				D2308D7625DB94240017394E /* Survey.swift in Sources */,
 				D2E9D8D425ECAB3400EE4027 /* LabResults.swift in Sources */,
 				D2E9D8E925F70C7A00EE4027 /* LandingView.swift in Sources */,
 				D29F8CAA25DB7F2000CEC2AA /* NutritionLabSurveyApp.swift in Sources */,
+				D2E9D8F525F7578A00EE4027 /* SearchLink.swift in Sources */,
+				D2E9D8F125F756B200EE4027 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

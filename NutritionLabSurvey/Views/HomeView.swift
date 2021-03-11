@@ -618,108 +618,110 @@ struct HomeView: View {
 				.sheet(isPresented: $isViewingLabPlan, onDismiss: {
 					isViewingLabPlan = false
 				}) {
-					GeometryReader { geometry in
-						ScrollView {
-							VStack(alignment: HorizontalAlignment.leading, spacing: 10) {
-								Section(header: Text("Lab Results").font(.title).foregroundColor(Color(red: 0.75, green: 0.75, blue: 0.75))) {
-									ForEach(biomarkers) { biomarker in
-										let result = results![biomarker.id]!
-										
-										VStack {
-											Text(biomarker.name)
-											BulletGraph(
-												width: geometry.size.width,
-												range: biomarker.refRange,
-												value: result,
-												units: biomarker.units
-											)
-										}
-										
-										Text("\(biomarker.name): \(result.formatted)\(biomarker.units)\n\(result < biomarker.refRange.lowerBound ? "Below" : result > biomarker.refRange.upperBound ? "Above" : "Within") range \(biomarker.refRange.lowerBound.formatted)\(biomarker.units) to \(biomarker.refRange.upperBound.formatted)\(biomarker.units)").foregroundColor(biomarker.refRange.contains(result) ? .init(red: 0, green: 0.3, blue: 0) : .init(red: 0.3, green: 0, blue: 0))
-									}
-								}
-								Divider()
-		//						Section(header: Text("Nutrition").font(.title).foregroundColor(Color(red: 0.5, green: 0.25, blue: 0)), content: {
-								Section(header: Text("Nutrition").font(.title).foregroundColor(Color(red: 0.5, green: 0.25, blue: 0))) {
-									Section(header: Text("Blood Sugar").font(.title2)) {
-										Text("Limit processed carbohydrates and foods with added sugar to support healthy blood sugar response. Eliminate high sugar drinks including soda and fruit juice.")
-		//                                Text("Eat macronutrient balanced meals that contain protein healthy fats, non-processed carbohydrates like whole fruit, potato, rice and beans.")
-										Text("Eat macronutrient balanced meals that contain protein healthy fats, non-processed carbohydrates like:")
-										VStack(alignment: .leading, spacing: 0) {
-											HStack(spacing: 0) {
-												Text("• ")
-												Button("Whole fruit") {}
-											}
-											Text("• Potato")
-											Text("• Rice and beans")
-										}
-										Text("Limit grains and high glycemic foods like candy, cookies, breads, crackers, and dried fruit. Limit alcohol until blood sugar is back in range and only drink alcohol with a macro balanced meal. Plan meals to combine protein, healthy fats, and vegetables with each carbohydrate serving to add fiber and to slow down the effect of carbohydrates in your system. Do not eat carbohydrates like fruit alone. Try to snack on healthy fat and protein instead of sugars. Increase protein, vegetables, and healthy fat amounts in meals in order to eliminate the need to snack or graze all day.")
-										HStack(spacing: 0) {
-											Text("Eat ")
-											Button("macro balanced meals") {}
-											Text(" and avoid grazing.")
-										}
-										Text("Keep non-processed and non-veggie carbohydrates at less than 90 grams per day to avoid weight gain and improve blood sugar.")
-										Text("Optionally keep non-processed and non-veggie carbohydrates at less than or equal to 60 grams per day to lose weight")
-									}
-									Divider()
-									Section(header: Text("Low Blood Sugar and High Cholesterol").font(.title2)) {
-		//							Section(header: Text("Low Blood Sugar and High Cholesterol").font(.title2), content: {
-										Text("Add healthy fats and consider eating smaller meals more often to avoid blood sugar crashes. You may want to work with a professional to get your blood sugar back in balance if you are crashing too often.")
-										Text("It's important with blood sugar crashes that you only eat carbohydrates that are lower on the glycemic scale and less processed. You may need 4 to 6 smaller meals with your macro amounts of protein, complex carbs, healthy fats, and vegetables.")
-										HStack(spacing: 0) {
-											Text("Optionally add a ")
-											Button("protein shake") {}
-										}
-										Text("or higher protein with vegetable snack at times when your blood sugar usually crashes. Fix meals, like lunch, that precede a crash.")
-		//                                Text("You can also add a protein shake or higher protein with vegetable snack at times when your blood sugar usually crashes. Fix meals, like lunch, that precede a crash.")
-									}
-									Divider()
-									Section(header: Text("Vitamins & Supplements").font(.title2)) {
-		//								VStack {
-										Text("Vitamin A: 700 mcg/day")
-										Text("Vitamin C: 75 mg/day")
-										Text("Vitamin D: 15 mcg/day (600 IU/day)")
-										Text("Vitamin E: 15 mg/day (22.4 IU/day)")
-										Text("Thiamin B1: 1.1 mg/day")
-										Text("Riboflavin B2: 1.1 mg/day")
-										Text("Niacin as Niacinamide or Niacin: 14 mg/day")
-										Text("Vitamin B6: 1.3 mg/day")
-										Text("Folic Acid (Folate): 400 mcg/day")
-										Text("Vitamin B12 as Methylcobalamin: 1.8 mcg")
-		//								Text("Biotin: ")
-		//								Text("Pantothenic Acid: ")
-		//								Text("Calcium: ")
-		//								Text("Magnesium: ")
-		//								Text("Zinc as Zinc Picolinate: ")
-		//								Text("Selenium as Selenomethionine: ")
-		//								Text("Copper: ")
-		//								Text("Manganese: ")
-		//								Text("Chromium: ")
-		//								Text("Potassium: ")
-		//								Text("Vanadium: ")
-		//								Text("L-Carnitine: ")
-		//								Text("Omega 3 - EPA/DHA: ")
-		//								}
-									}
-									Divider()
-									Section(header: Text("Lifestyle").font(.title2)) {
-										Text("Get movement every day, at least every 3-4 hours if you can.")
-										Text("If your job is sedentary, a standing desk can help.")
-										Text("Work with someone to get your blood sugar in balance if you can't do it yourself.")
-										Text("Once your blood sugar is more balanced you should be able to exercise or at least stretch or walk without eating first.")
-										HStack(spacing: 0) {
-											Text("Work on ")
-											Button("deep breathing") {}
-											Text(" and ")
-											Button("stress relief") {}
-											Text(".")
-										}
-		//								Text("Generally work on deep breathing and stress relief.")
-										Text("Stress can affect all of your lab results. Try to do some calming meditation before your blood draw, especially if you get stressed out by labs or blood draws.")
-									}
-								}
-							}
+                    ScrollView {
+                        VStack(alignment: HorizontalAlignment.leading, spacing: 10) {
+                            Section(header: Text("Lab Results").font(.title).foregroundColor(Color(red: 0.75, green: 0.75, blue: 0.75))) {
+                                VStack(spacing: 40) {
+                                    ForEach(biomarkers) { biomarker in
+                                        let result = results![biomarker.id]!
+                                        
+                                        VStack(alignment: .leading, spacing: 6) {
+                                            Text(biomarker.name)
+                                                .bold()
+                                            BulletGraph(
+                                                width: UIScreen.main.bounds.size.width - 20 * 2,
+                                                range: biomarker.refRange,
+                                                value: result,
+                                                units: biomarker.units
+                                            )
+                                        }
+                                    }
+                                }
+                                .padding(.top, 60)
+                            }
+                            Divider()
+    //						Section(header: Text("Nutrition").font(.title).foregroundColor(Color(red: 0.5, green: 0.25, blue: 0)), content: {
+                            Section(header: Text("Nutrition").font(.title).foregroundColor(Color(red: 0.5, green: 0.25, blue: 0))) {
+                                Section(header: Text("Blood Sugar").font(.title2)) {
+                                    Text("Limit processed carbohydrates and foods with added sugar to support healthy blood sugar response. Eliminate high sugar drinks including soda and fruit juice.")
+    //                                Text("Eat macronutrient balanced meals that contain protein healthy fats, non-processed carbohydrates like whole fruit, potato, rice and beans.")
+                                    Text("Eat macronutrient balanced meals that contain protein healthy fats, non-processed carbohydrates like:")
+                                    VStack(alignment: .leading, spacing: 0) {
+                                        HStack(spacing: 0) {
+                                            Text("• ")
+                                            SearchLink(query: "Whole fruit") {
+                                                Text("Whole fruit")
+                                            }
+                                        }
+                                        Text("• Potato")
+                                        Text("• Rice and beans")
+                                    }
+                                    Text("Limit grains and high glycemic foods like candy, cookies, breads, crackers, and dried fruit. Limit alcohol until blood sugar is back in range and only drink alcohol with a macro balanced meal. Plan meals to combine protein, healthy fats, and vegetables with each carbohydrate serving to add fiber and to slow down the effect of carbohydrates in your system. Do not eat carbohydrates like fruit alone. Try to snack on healthy fat and protein instead of sugars. Increase protein, vegetables, and healthy fat amounts in meals in order to eliminate the need to snack or graze all day.")
+                                    HStack(spacing: 0) {
+                                        Text("Eat ")
+                                        Button("macro balanced meals") {}
+                                        Text(" and avoid grazing.")
+                                    }
+                                    Text("Keep non-processed and non-veggie carbohydrates at less than 90 grams per day to avoid weight gain and improve blood sugar.")
+                                    Text("Optionally keep non-processed and non-veggie carbohydrates at less than or equal to 60 grams per day to lose weight")
+                                }
+                                Divider()
+                                Section(header: Text("Low Blood Sugar and High Cholesterol").font(.title2)) {
+    //							Section(header: Text("Low Blood Sugar and High Cholesterol").font(.title2), content: {
+                                    Text("Add healthy fats and consider eating smaller meals more often to avoid blood sugar crashes. You may want to work with a professional to get your blood sugar back in balance if you are crashing too often.")
+                                    Text("It's important with blood sugar crashes that you only eat carbohydrates that are lower on the glycemic scale and less processed. You may need 4 to 6 smaller meals with your macro amounts of protein, complex carbs, healthy fats, and vegetables.")
+                                    HStack(spacing: 0) {
+                                        Text("Optionally add a ")
+                                        Button("protein shake") {}
+                                    }
+                                    Text("or higher protein with vegetable snack at times when your blood sugar usually crashes. Fix meals, like lunch, that precede a crash.")
+    //                                Text("You can also add a protein shake or higher protein with vegetable snack at times when your blood sugar usually crashes. Fix meals, like lunch, that precede a crash.")
+                                }
+                                Divider()
+                                Section(header: Text("Vitamins & Supplements").font(.title2)) {
+    //								VStack {
+                                    Text("Vitamin A: 700 mcg/day")
+                                    Text("Vitamin C: 75 mg/day")
+                                    Text("Vitamin D: 15 mcg/day (600 IU/day)")
+                                    Text("Vitamin E: 15 mg/day (22.4 IU/day)")
+                                    Text("Thiamin B1: 1.1 mg/day")
+                                    Text("Riboflavin B2: 1.1 mg/day")
+                                    Text("Niacin as Niacinamide or Niacin: 14 mg/day")
+                                    Text("Vitamin B6: 1.3 mg/day")
+                                    Text("Folic Acid (Folate): 400 mcg/day")
+                                    Text("Vitamin B12 as Methylcobalamin: 1.8 mcg")
+    //								Text("Biotin: ")
+    //								Text("Pantothenic Acid: ")
+    //								Text("Calcium: ")
+    //								Text("Magnesium: ")
+    //								Text("Zinc as Zinc Picolinate: ")
+    //								Text("Selenium as Selenomethionine: ")
+    //								Text("Copper: ")
+    //								Text("Manganese: ")
+    //								Text("Chromium: ")
+    //								Text("Potassium: ")
+    //								Text("Vanadium: ")
+    //								Text("L-Carnitine: ")
+    //								Text("Omega 3 - EPA/DHA: ")
+    //								}
+                                }
+                                Divider()
+                                Section(header: Text("Lifestyle").font(.title2)) {
+                                    Text("Get movement every day, at least every 3-4 hours if you can.")
+                                    Text("If your job is sedentary, a standing desk can help.")
+                                    Text("Work with someone to get your blood sugar in balance if you can't do it yourself.")
+                                    Text("Once your blood sugar is more balanced you should be able to exercise or at least stretch or walk without eating first.")
+                                    HStack(spacing: 0) {
+                                        Text("Work on ")
+                                        Button("deep breathing") {}
+                                        Text(" and ")
+                                        Button("stress relief") {}
+                                        Text(".")
+                                    }
+    //								Text("Generally work on deep breathing and stress relief.")
+                                    Text("Stress can affect all of your lab results. Try to do some calming meditation before your blood draw, especially if you get stressed out by labs or blood draws.")
+                                }
+                            }
 						}.padding()
 					}
 				}

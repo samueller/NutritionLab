@@ -25,7 +25,7 @@ struct BulletGraph: View {
 	}
 	
 	var position: CGFloat {
-		(width / 3) * .init(1 + clamped / (range.upperBound - range.lowerBound))
+        (width / 3) * .init(1 + (clamped - range.lowerBound) / (range.upperBound - range.lowerBound))
 	}
 	
 	var scale: some View {
@@ -92,8 +92,7 @@ struct BulletGraph: View {
 			}
 			overlay
 		}
-		.frame(width: width, height: 115)
-		.offset(y: 48)
+		.frame(width: width)
 	}
 }
 
@@ -101,8 +100,8 @@ struct BulletGraph_Previews: PreviewProvider {
 	static var previews: some View {
 		BulletGraph(
 			width: UIScreen.main.bounds.size.width - 20 * 2,
-			range: 0...150,
-			value: 1000,
+			range: 175...425,
+			value: 292,
 			units: "mg/dL"
 		)
 	}
